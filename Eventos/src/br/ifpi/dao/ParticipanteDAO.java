@@ -5,7 +5,7 @@ import br.ifpi.entity.*;
 
 public interface ParticipanteDAO {
 	
-	public void addParticipante();
+	public void addParticipante(Participante participante);
 	public Participante consultaParticipante(int cpf);
 	public List<Participante> consultarTodosParticipantes();	 
 	public void deleteParticipante( Participante participante);

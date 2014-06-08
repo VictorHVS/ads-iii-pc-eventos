@@ -4,14 +4,14 @@ public class Participante {
 	int id;
 	String nome;
 	String email;
-	String cpf;
+	int cpf;
 	String perfil;
 	
 	public Participante(){
 		
 	}
 	
-	public Participante(String _nome, String _email, String _cpf, String _perfil){
+	public Participante(String _nome, String _email, int _cpf, String _perfil){
 		this.nome = _nome;
 		this.email = _email;
 		this.cpf = _cpf;
@@ -42,11 +42,11 @@ public class Participante {
 		this.email = email;
 	}
 
-	public String getCpf() {
+	public int getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(String cpf) {
+	public void setCpf(int cpf) {
 		this.cpf = cpf;
 	}
 
