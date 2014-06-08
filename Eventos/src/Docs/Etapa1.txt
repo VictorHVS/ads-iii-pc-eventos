@@ -1,0 +1,3 @@
+Felipe Silva:
+
+Para a persistência de dados usei o padrão DAO (Data Access Object) em conjunto com técnicas de JDBC.
