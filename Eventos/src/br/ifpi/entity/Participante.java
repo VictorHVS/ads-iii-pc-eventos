@@ -18,7 +18,7 @@ public class Participante {
 		this.perfil = _perfil;
 	}
 
-	public int getId() {
+	public int getId( ) {
 		return id;
 	}
 
