@@ -1,6 +1,9 @@
 package br.ifpi.entity;
 
+@Entity
 public class Participante {
+	
+	@Id @GeneratedValue
 	int id;
 	String nome;
 	String email;
