@@ -26,7 +26,7 @@ public class EspacoFisico {
 		this.setNome(nome);
 		this.setReservado(reservado);
 		this.principal = new EspacoFisico();
-		this.locais = new ArrayList<>(); 
+		this.setLocais(new ArrayList<EspacoFisico>()); 
 	}
 	
 	public void addLocais(EspacoFisico local){
@@ -51,6 +51,12 @@ public class EspacoFisico {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public List<EspacoFisico> getLocais() {
+		return locais;
+	}
+	public void setLocais(ArrayList<EspacoFisico> arrayList) {
+		this.locais = arrayList;
 	}
 	
 		
