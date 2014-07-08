@@ -1,5 +1,6 @@
 package br.ifpi.entity;
 
-public class CupomPromocional {
+public abstract class CupomPromocional {
+	
 
 }

@@ -12,7 +12,8 @@ public class Evento {
 	private List<AtividaDeEvento> atividades;
 	private Instituicao instituicao;
 	private FaseEvento faseEvento;
-	
+	private List<DescontoProgramado> descontos;
+	private List<CupomPromocional> cupom;
 	private Calendar dataInicio;
 	
 	private Calendar dataFinaliza;

@@ -3,7 +3,7 @@ package br.ifpi.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EspacoFisico {
+public abstract class EspacoFisico {
 	
 	private int id;
 	private String nome;
@@ -15,11 +15,13 @@ public class EspacoFisico {
 	public EspacoFisico(){
 		
 	}
+	/*
 	public EspacoFisico(int id, String nome, boolean reservado, EspacoFisico principal){
 		this.setId(id);
 		this.setNome(nome);
 		this.setReservado(reservado);
-		this.principal = new EspacoFisico();
+		this.principal = new EspacoFisico() 
+		
 	}
 	public EspacoFisico(int id, String nome, boolean reservado, EspacoFisico principal, List<EspacoFisico> locais){
 		this.setId(id);
@@ -28,7 +30,7 @@ public class EspacoFisico {
 		this.principal = new EspacoFisico();
 		this.setLocais(new ArrayList<EspacoFisico>()); 
 	}
-	
+	*/
 	public void addLocais(EspacoFisico local){
 		
 		principal.addLocais(local);

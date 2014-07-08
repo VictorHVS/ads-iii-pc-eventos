@@ -1,6 +1,7 @@
 package br.ifpi.entity;
 
 public class SegmentoParticipante {
+	//Aluno - Professor - Profisisonal
 	private int id;
 	private String nome;
 	private CupomPromocional cupomDesconto;

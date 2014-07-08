@@ -1,4 +1,4 @@
-package br.ifpi.entity;
+ackage br.ifpi.entity;
 
 public enum ParticipanteType {
 	
