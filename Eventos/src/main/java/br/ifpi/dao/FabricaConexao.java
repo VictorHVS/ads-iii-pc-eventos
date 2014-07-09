@@ -14,9 +14,14 @@ public class FabricaConexao {
 							.getConnection("jdbc:mysql://localhost/eventos", "root","");
 			} catch (Exception e) {
 				// TODO: handle exception
-				throw e;
+				try {
+					throw e;
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
-			
+			return null;
 		}
 		
 	}

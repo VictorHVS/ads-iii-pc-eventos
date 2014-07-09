@@ -3,23 +3,40 @@ package br.ifpi.entity;
 import java.util.Calendar;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Evento {
-	
-	
+
+	@Id
+	@GeneratedValue
 	private int id;
 	private String nome;
+	
+	@ManyToOne
 	private TipoEvento tipoEvento;
+	
+	@OneToMany
 	private List<AtividaDeEvento> atividades;
+	
+	@ManyToOne
 	private Instituicao instituicao;
+	
+	@ManyToOne
 	private FaseEvento faseEvento;
+	
 	private List<DescontoProgramado> descontos;
 	private List<CupomPromocional> cupom;
 	private Calendar dataInicio;
-	
+
 	private Calendar dataFinaliza;
-	
-	public Evento(){
-		
+
+	public Evento() {
+
 	}
 
 	public int getId() {

@@ -1,31 +1,47 @@
 package br.ifpi.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Participante {
-	
-	@Id @GeneratedValue
-	int id;
-	String nome;
+
+	@Id
+	@GeneratedValue
+	private int id;
+	private String nome;
 	String email;
 	int cpf;
-	String perfil;
 	
-	public Participante(){
-		
+	@ManyToOne
+	private PerfilParticipante perfilParticipante;
+	
+	@ManyToOne
+	private SegmentoParticipante segmentoParticipante;
+	
+	@OneToMany(mappedBy="participante")
+	private List<Inscricao> inscricoes;
+	
+	@ManyToOne
+	private TipoUsuario tipoUsuario;
+	
+	public Participante() {
+
 	}
-	
-	public Participante(String _nome, String _email, int _cpf, String _perfil){
+
+	public Participante(String _nome, String _email, int _cpf, PerfilParticipante _perfil) {
 		this.nome = _nome;
 		this.email = _email;
 		this.cpf = _cpf;
-		this.perfil = _perfil;
+		this.perfilParticipante = _perfil;
 	}
 
-	public int getId( ) {
+	public int getId() {
 		return id;
 	}
 
@@ -57,12 +73,12 @@ public class Participante {
 		this.cpf = cpf;
 	}
 
-	public String getPerfil() {
-		return perfil;
+	public PerfilParticipante getPerfil() {
+		return perfilParticipante;
 	}
 
-	public void setPerfil(String perfil) {
-		this.perfil = perfil;
+	public void setPerfil(PerfilParticipante perfil) {
+		this.perfilParticipante = perfil;
 	}
-	
+
 }
