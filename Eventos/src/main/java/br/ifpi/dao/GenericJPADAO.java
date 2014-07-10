@@ -15,9 +15,9 @@ public class GenericJPADAO implements GenericDAO {
 	public Object save(Object entity) {
 		EntityManager em = JPAUtil.getCurrentEntityManager();
 		try {
-			//em.getTransaction().begin(); //Se Usar AppWeb a Transacao será controlada pelo OpenSessionInView
+			em.getTransaction().begin(); //Se Usar AppWeb a Transacao será controlada pelo OpenSessionInView
 			Object obj = em.merge(entity);
-			//em.getTransaction().commit();
+			em.getTransaction().commit();
 			return obj;
 		} catch (Exception e) {
 			//em.getTransaction().rollback();
@@ -29,11 +29,11 @@ public class GenericJPADAO implements GenericDAO {
 	public void delete(Object entity) {
 		EntityManager em = JPAUtil.getCurrentEntityManager(); //emf.createEntityManager();
 		try {
-			//em.getTransaction().begin();
+			em.getTransaction().begin();
 			em.remove(em.merge(entity));
-			//em.getTransaction().commit();
+			em.getTransaction().commit();
 		} catch (Exception e) {
-			//em.getTransaction().rollback();
+			em.getTransaction().rollback();
 			throw new DAOException("A operacao nao foi realizada com sucesso.", e);
 		} finally {
 		}
