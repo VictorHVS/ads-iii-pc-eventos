@@ -21,10 +21,7 @@ public class Inscricao {
 	private StatusInscricao statusInscricao;
 	
 	@OneToMany
-	private List<AtividaDeEvento> atividades;
-
-	@ManyToOne
-	private Evento evento;
+	private List<Evento> eventos;
 
 	public Inscricao() {
 

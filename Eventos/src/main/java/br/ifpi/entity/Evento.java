@@ -31,8 +31,8 @@ public class Evento {
 	
 	private List<DescontoProgramado> descontos;
 	private List<CupomPromocional> cupom;
+	
 	private Calendar dataInicio;
-
 	private Calendar dataFinaliza;
 
 	public Evento() {
@@ -85,5 +85,37 @@ public class Evento {
 
 	public void setFaseEvento(FaseEvento faseEvento) {
 		this.faseEvento = faseEvento;
+	}
+
+	public List<DescontoProgramado> getDescontos() {
+		return descontos;
+	}
+
+	public void setDescontos(List<DescontoProgramado> descontos) {
+		this.descontos = descontos;
+	}
+
+	public List<CupomPromocional> getCupom() {
+		return cupom;
+	}
+
+	public void setCupom(List<CupomPromocional> cupom) {
+		this.cupom = cupom;
+	}
+
+	public Calendar getDataInicio() {
+		return dataInicio;
+	}
+
+	public void setDataInicio(Calendar dataInicio) {
+		this.dataInicio = dataInicio;
+	}
+
+	public Calendar getDataFinaliza() {
+		return dataFinaliza;
+	}
+
+	public void setDataFinaliza(Calendar dataFinaliza) {
+		this.dataFinaliza = dataFinaliza;
 	}
 }
