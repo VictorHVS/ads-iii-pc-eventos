@@ -13,6 +13,7 @@ public class EventoPrincipal {
 	public static void main(String[] args) {
 		Inscricao inscricao = new Inscricao();
 		Instituicao instituicao = new Instituicao();
+		AtividaDeEvento atividadeEvento = new AtividaDeEvento();
 		Evento evento = new Evento();
 		Participante participante;
 		String usuario = "clapyourhands";
@@ -29,10 +30,11 @@ public class EventoPrincipal {
 							" 4 - Sair");
 					
 					switch(opcao){
+					
 					case "1": 
 						
 							
-							AtividaDeEvento atividadeEvento = new AtividaDeEvento();
+							
 							
 							evento.setNome( JOptionPane.showInputDialog("Nome do Evento: ", "Informe o nome do Evento!"  ));
 							if(inscricao.getEventos().contains(evento.getNome())){
@@ -51,12 +53,15 @@ public class EventoPrincipal {
 								atividadeEvento.getResponsavel().setCpf(JOptionPane.showInputDialog("CPF do Responsável: ", "Informe o Cpf do responsavel!!"  ));
 								atividadeEvento.getResponsavel().getPerfil().setIdentificar(JOptionPane.showInputDialog("Perfil do Responsavel: ", "Informe o perfil do Responsavel" ));
 								evento.getAtividades().add(atividadeEvento);
+								
 							}while(JOptionPane.showConfirmDialog(null, "Deseja cadastrar outra Atividade de Evento?")==1);
 								inscricao.getEventos().add(evento);
 								evento.getInstituicao().getEventos().add(evento);
 							
 							}
 							break;
+					
+					
 					case "2":
 							if(inscricao.getEventos().contains(JOptionPane.showInputDialog("Nome do Evento","Informe o seu nome do evento que queira se cadastrar"))){
 								
@@ -65,14 +70,24 @@ public class EventoPrincipal {
 								inscricao.getParticipante().setEmail(JOptionPane.showInputDialog("Email do Participante: ", "Informe o Email do participante" ));
 								inscricao.getParticipante().getPerfil().setIdentificar(JOptionPane.showInputDialog("Perfil do Participante: ", "Informe o perfil do participante" ));
 								evento.getParticipantes().add(inscricao.getParticipante());
-								inscricao.getEventos().add(evento);
 								
+								do{
+									if(evento.getAtividades().contains(JOptionPane.showInputDialog("Atividade de Evento a frequentar: ", "Informe o nome da Atividade que deseja frequentar" ))){
+										atividadeEvento.getFrequentantes().add(inscricao.getParticipante());
+										evento.getAtividades().add(atividadeEvento);
+										inscricao.getEventos().add(evento);
+								
+									}else{
+										JOptionPane.showMessageDialog(null, "Infelizmente essa ativatidade não consta em nossos cadastros!");
+									}
+								
+								}while(JOptionPane.showConfirmDialog(null, "Deseja se cadastrar em outra Atividade?")==1);
 								
 							}else{
-								
+								JOptionPane.showMessageDialog(null, "Esse Evento não foi cadastrado!");
 							}
+							JOptionPane.showMessageDialog(null, "Cadastro feito com sucesso !");
 							
-						
 					case "3":
 						     
 					case "4":
