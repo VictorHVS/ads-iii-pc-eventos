@@ -16,7 +16,7 @@ public class Participante {
 	private int id;
 	private String nome;
 	String email;
-	int cpf;
+	String cpf;
 	
 	@ManyToOne
 	private PerfilParticipante perfilParticipante;
@@ -65,11 +65,11 @@ public class Participante {
 		this.email = email;
 	}
 
-	public int getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(int cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
