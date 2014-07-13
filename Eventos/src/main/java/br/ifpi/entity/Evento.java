@@ -29,6 +29,7 @@ public class Evento {
 	@ManyToOne
 	private FaseEvento faseEvento;
 	
+	private List<Participante> participantes;
 	private List<DescontoProgramado> descontos;
 	private List<CupomPromocional> cupom;
 	
@@ -117,5 +118,13 @@ public class Evento {
 
 	public void setDataFinaliza(Calendar dataFinaliza) {
 		this.dataFinaliza = dataFinaliza;
+	}
+
+	public List<Participante> getParticipantes() {
+		return participantes;
+	}
+
+	public void setParticipantes(List<Participante> participantes) {
+		this.participantes = participantes;
 	}
 }

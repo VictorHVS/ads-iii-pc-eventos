@@ -6,18 +6,21 @@ import br.ifpi.entity.AtividaDeEvento;
 import br.ifpi.entity.Evento;
 import br.ifpi.entity.Inscricao;
 import br.ifpi.entity.Instituicao;
+import br.ifpi.entity.Participante;
 
 public class EventoPrincipal {
 
 	public static void main(String[] args) {
 		Inscricao inscricao = new Inscricao();
 		Instituicao instituicao = new Instituicao();
+		Evento evento = new Evento();
+		Participante participante;
 		String usuario = "clapyourhands";
 		String senha = "123";		
 		String opcao;
 		
 		if(usuario.equals(JOptionPane.showInputDialog("Digite o nome do usuario: ", "Informe o nome de Usuario") )){
-			if(senha.equals(JOptionPane.showInputDialog("Digite sua senha: ", "Informe sua senha!"  ))){
+			if(senha.equals(JOptionPane.showInputDialog("Digite sua senha: ", "Informe sua senha!"))){
 					opcao = JOptionPane.showInputDialog("Bem-Vindo ao Menu Eventos" + "\n"+
 							"Escolha a ação desejada: \n" +
 							" 1 - Inscrever um Evento \n" + 
@@ -28,7 +31,7 @@ public class EventoPrincipal {
 					switch(opcao){
 					case "1": 
 						
-							Evento evento = new Evento();
+							
 							AtividaDeEvento atividadeEvento = new AtividaDeEvento();
 							
 							evento.setNome( JOptionPane.showInputDialog("Nome do Evento: ", "Informe o nome do Evento!"  ));
@@ -46,16 +49,30 @@ public class EventoPrincipal {
 								atividadeEvento.getResponsavel().setNome(JOptionPane.showInputDialog("Nome do Responsavel pela atividade: ", "Responsavel pela Atividade!"  ));
 								atividadeEvento.getResponsavel().setEmail(JOptionPane.showInputDialog("Email do Responsavel: ", "Email do responsavel !"  ));
 								atividadeEvento.getResponsavel().setCpf(JOptionPane.showInputDialog("CPF do Responsável: ", "Informe o Cpf do responsavel!!"  ));
-								atividadeEvento.getResponsavel().getPerfil().setIdentificar(JOptionPane.showInputDialog("Perfil do Responsavel: ", "Informe o perfil do Responsavel" ));;
+								atividadeEvento.getResponsavel().getPerfil().setIdentificar(JOptionPane.showInputDialog("Perfil do Responsavel: ", "Informe o perfil do Responsavel" ));
 								evento.getAtividades().add(atividadeEvento);
-							}while(JOptionPane.showInputDialog("Deseja cadastrar outra Atividade de Evento? ").equals("1"));
+							}while(JOptionPane.showConfirmDialog(null, "Deseja cadastrar outra Atividade de Evento?")==1);
 								inscricao.getEventos().add(evento);
 								evento.getInstituicao().getEventos().add(evento);
 							
 							}
 							break;
 					case "2":
-					
+							if(inscricao.getEventos().contains(JOptionPane.showInputDialog("Nome do Evento","Informe o seu nome do evento que queira se cadastrar"))){
+								
+								inscricao.getParticipante().setNome(JOptionPane.showInputDialog("Nome do Participante: ", "Informe o nome do Participante" ));
+								inscricao.getParticipante().setCpf(JOptionPane.showInputDialog("CPF do Participante: ", "Informe o CPF do participante" ));
+								inscricao.getParticipante().setEmail(JOptionPane.showInputDialog("Email do Participante: ", "Informe o Email do participante" ));
+								inscricao.getParticipante().getPerfil().setIdentificar(JOptionPane.showInputDialog("Perfil do Participante: ", "Informe o perfil do participante" ));
+								evento.getParticipantes().add(inscricao.getParticipante());
+								inscricao.getEventos().add(evento);
+								
+								
+							}else{
+								
+							}
+							
+						
 					case "3":
 						     
 					case "4":
@@ -70,10 +87,6 @@ public class EventoPrincipal {
 		
 		
 		
-		JOptionPane.showMessageDialog(null,	"Bem Vindo ao Menu Eventos"+ "\n"+
-				"1 - Inscrever um Evento" + "\n" +
-				"2 - Inscrever-se em um Evento" + "\n"
-				);
-	}
+		}
 
 }

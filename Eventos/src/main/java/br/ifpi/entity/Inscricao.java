@@ -72,5 +72,13 @@ public class Inscricao {
 		this.atividadeEvento = atividadeEvento;
 	}
 
+	public Participante getParticipante() {
+		return participante;
+	}
+
+	public void setParticipante(Participante participante) {
+		this.participante = participante;
+	}
+
 
 }

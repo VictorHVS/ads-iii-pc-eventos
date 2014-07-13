@@ -10,6 +10,8 @@ public class AtividaDeEvento {
 	private TipoAtividadeEvento tipoAtividadeEvento;
 	private Participante responsavel;
 	
+	private List<Participante> frequentantes; 
+	
 	private Calendar dataInicio;	
 	private Calendar dataFinaliza;
 	public Participante getResponsavel() {
@@ -47,6 +49,12 @@ public class AtividaDeEvento {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public List<Participante> getFrequentantes() {
+		return frequentantes;
+	}
+	public void setFrequentantes(List<Participante> frequentantes) {
+		this.frequentantes = frequentantes;
 	}
 	
 	
