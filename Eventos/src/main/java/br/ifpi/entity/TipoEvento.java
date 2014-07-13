@@ -5,8 +5,8 @@ public class TipoEvento {
 	private int id;
 	private String nome;
 	
-	TipoEvento(){
-		
+	TipoEvento(String nome){
+		this.nome = nome;		
 	}
 
 	public int getId() {

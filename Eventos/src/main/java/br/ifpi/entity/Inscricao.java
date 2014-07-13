@@ -1,5 +1,6 @@
 package br.ifpi.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.GeneratedValue;
@@ -22,13 +23,17 @@ public class Inscricao {
 	
 	@OneToMany
 	private List<Evento> eventos;
-
+	
+	private List<AtividaDeEvento> atividadeEvento;
+	
 	public Inscricao() {
-
+		eventos = new ArrayList<Evento>();
+		atividadeEvento = new ArrayList<AtividaDeEvento>();
 	}
 
 	public int getId() {
 		return id;
+		
 	}
 
 	public void setId(int id) {
@@ -51,20 +56,21 @@ public class Inscricao {
 		this.statusInscricao = statusInscricao;
 	}
 
-	public List<AtividaDeEvento> getAtividades() {
-		return atividades;
+	public List<Evento> getEventos() {
+		return eventos;
 	}
 
-	public void setAtividades(List<AtividaDeEvento> atividades) {
-		this.atividades = atividades;
+	public void setEventos(List<Evento> eventos) {
+		this.eventos = eventos;
 	}
 
-	public Evento getEventoPrincipal() {
-		return evento;
+	public List<AtividaDeEvento> getAtividadeEvento() {
+		return atividadeEvento;
 	}
 
-	public void setEventoPrincipal(Evento eventoPrincipal) {
-		this.evento = eventoPrincipal;
+	public void setAtividadeEvento(List<AtividaDeEvento> atividadeEvento) {
+		this.atividadeEvento = atividadeEvento;
 	}
+
 
 }
