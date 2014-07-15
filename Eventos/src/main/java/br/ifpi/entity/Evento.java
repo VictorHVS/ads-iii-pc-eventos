@@ -16,9 +16,7 @@ public class Evento {
 	@GeneratedValue
 	private int id;
 	private String nome;
-	
-	@ManyToOne
-	private TipoEvento tipoEvento;
+	private String tipoEvento;
 	
 	@OneToMany
 	private List<AtividaDeEvento> atividades;
