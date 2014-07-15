@@ -3,7 +3,7 @@ package br.ifpi.entity;
 import java.util.Calendar;
 import java.util.List;
 
-public class AtividaDeEvento {
+public abstract class AtividaDeEvento {
 	private int id;
 	private String nome;
 	

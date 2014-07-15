@@ -8,32 +8,13 @@ public abstract class EspacoFisico {
 	private int id;
 	private String nome;
 	private boolean reservado;
-	private List<EspacoFisico> locais; 
-	private EspacoFisico principal;
+
 	
+
 	
-	public EspacoFisico(){
-		
-	}
-	/*
-	public EspacoFisico(int id, String nome, boolean reservado, EspacoFisico principal){
-		this.setId(id);
-		this.setNome(nome);
-		this.setReservado(reservado);
-		this.principal = new EspacoFisico() 
-		
-	}
-	public EspacoFisico(int id, String nome, boolean reservado, EspacoFisico principal, List<EspacoFisico> locais){
-		this.setId(id);
-		this.setNome(nome);
-		this.setReservado(reservado);
-		this.principal = new EspacoFisico();
-		this.setLocais(new ArrayList<EspacoFisico>()); 
-	}
-	*/
 	public void addLocais(EspacoFisico local){
 		
-		principal.addLocais(local);
+	
 		
 	}
 	public boolean isReservado() {

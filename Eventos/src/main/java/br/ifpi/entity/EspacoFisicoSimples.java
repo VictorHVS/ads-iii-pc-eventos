@@ -12,6 +12,7 @@ public class EspacoFisicoSimples extends EspacoFisico {
 	private EspacoFisico principal;
 	
 	
+	
 	public EspacoFisicoSimples(){
 		
 	}
@@ -74,6 +75,22 @@ public class EspacoFisicoSimples extends EspacoFisico {
 
 	public void setLocalizacao(String localizacao) {
 		this.localizacao = localizacao;
+	}
+
+	public EspacoFisico getPrincipal() {
+		return principal;
+	}
+
+	public void setPrincipal(EspacoFisico principal) {
+		this.principal = principal;
+	}
+
+	public int getCapacidade() {
+		return capacidade;
+	}
+
+	public void setCapacidade(int capacidade) {
+		this.capacidade = capacidade;
 	}
 		
 	

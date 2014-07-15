@@ -1,16 +1,16 @@
-package br.ifpi.dao;
+package br.ifpi.entity;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.util.Calendar;
 
 import javax.swing.JOptionPane;
-
-import br.ifpi.entity.AtividaDeEvento;
-import br.ifpi.entity.Evento;
-import br.ifpi.entity.Inscricao;
-import br.ifpi.entity.Instituicao;
-import br.ifpi.entity.Participante;
+import javax.xml.crypto.Data;
 
 public class EventoPrincipal {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
+		
 		Inscricao inscricao = new Inscricao();
 		Instituicao instituicao = new Instituicao();
 		AtividaDeEvento atividadeEvento = new AtividaDeEvento();
@@ -32,9 +32,9 @@ public class EventoPrincipal {
 					switch(opcao){
 					
 					case "1": 
-						
-							
-							
+							Calendar c = Calendar.getInstance();
+							DateFormat f = DateFormat.getInstance();
+							Data data;
 							
 							evento.setNome( JOptionPane.showInputDialog("Nome do Evento: ", "Informe o nome do Evento!"  ));
 							if(inscricao.getEventos().contains(evento.getNome())){
@@ -45,7 +45,9 @@ public class EventoPrincipal {
 								evento.getInstituicao().setNome(JOptionPane.showInputDialog("Nome da Instituição: ", "Informe o nome da Instituição!"  ));
 								evento.getInstituicao().setEndereço(JOptionPane.showInputDialog("Endereço Instituição: ", "Informe o Endereço da Instituição!"  ));	
 								//Lembrar colocar dentro de instituição o evento dentro da lista de eventos da classe instituição
-								evento.getTipoEvento().setNome(JOptionPane.showInputDialog("Tipo de Evento: ", "Informe o tipo de Evento!"  ));
+								String dataInicio;
+								dataInicio = JOptionPane.showInputDialog("Tipo de Evento: ", "DD/MM/AAAA"  );
+								data = (Data) f.parse(dataInicio);
 							do{
 								atividadeEvento.setNome(JOptionPane.showInputDialog("Nome da Atividade do Evento: ", "Informe o nome da Atividade do Evento!"  ));
 								atividadeEvento.getResponsavel().setNome(JOptionPane.showInputDialog("Nome do Responsavel pela atividade: ", "Responsavel pela Atividade!"  ));
