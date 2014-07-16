@@ -1,9 +1,19 @@
 package br.ifpi.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
 public class SegmentoParticipante {
 	//Aluno - Professor - Profisisonal
+	@Id
+	@GeneratedValue
 	private int id;
 	private String nome;
+	
+	@OneToMany
 	private CupomPromocional cupomDesconto;
 	
 	public SegmentoParticipante(){

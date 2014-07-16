@@ -6,8 +6,10 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Evento {
@@ -27,11 +29,19 @@ public class Evento {
 	@ManyToOne
 	private FaseEvento faseEvento;
 	
+	@OneToMany
 	private List<Participante> participantes;
+	
+	@OneToMany
 	private List<DescontoProgramado> descontos;
+	
+	@OneToMany
 	private List<CupomPromocional> cupom;
 	
+	@OneToOne
 	private Calendar dataInicio;
+	
+	@OneToOne
 	private Calendar dataFinaliza;
 
 	public Evento() {

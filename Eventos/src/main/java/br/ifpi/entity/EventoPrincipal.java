@@ -13,7 +13,7 @@ public class EventoPrincipal {
 		
 		Inscricao inscricao = new Inscricao();
 		Instituicao instituicao = new Instituicao();
-		AtividaDeEvento atividadeEvento = new AtividaDeEvento();
+		AtividaDeEvento atividadeEvento;
 		Evento evento = new Evento();
 		Participante participante;
 		String usuario = "clapyourhands";

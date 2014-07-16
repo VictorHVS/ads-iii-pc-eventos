@@ -3,12 +3,24 @@ package br.ifpi.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+@Entity
+@DiscriminatorValue("EF_simples")
 public class EspacoFisicoSimples extends EspacoFisico {
+	
+	@Id
+	@GeneratedValue
 	private int id;
 	private String nome;
 	private boolean reservado;
 	private String localizacao;
 	private int capacidade; 
+	
+	@OneToOne
 	private EspacoFisico principal;
 	
 	

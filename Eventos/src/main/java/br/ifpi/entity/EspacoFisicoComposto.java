@@ -3,12 +3,27 @@ package br.ifpi.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+@Entity
+@DiscriminatorValue("EF_composto")
 public class EspacoFisicoComposto extends EspacoFisico {
+	
+	@Id
+	@GeneratedValue
 	private int id;
 	private String nome;
 	private String localizacao;
 	private boolean reservado;
-	private List<EspacoFisico> locais; 
+	
+	@OneToMany
+	private List<EspacoFisico> locais;
+	
+	@OneToOne
 	private EspacoFisico principal;
 	
 	

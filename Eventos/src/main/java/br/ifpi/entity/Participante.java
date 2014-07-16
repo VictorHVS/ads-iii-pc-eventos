@@ -13,7 +13,7 @@ public class Participante {
 
 	@Id
 	@GeneratedValue
-	private int id;
+	private int id;	
 	private String nome;
 	String email;
 	String cpf;
@@ -29,12 +29,13 @@ public class Participante {
 	
 	@ManyToOne
 	private TipoUsuario tipoUsuario;
+
 	
 	public Participante() {
 
 	}
 
-	public Participante(String _nome, String _email, int _cpf, PerfilParticipante _perfil) {
+	public Participante(String _nome, String _email, String _cpf, PerfilParticipante _perfil) {
 		this.nome = _nome;
 		this.email = _email;
 		this.cpf = _cpf;
