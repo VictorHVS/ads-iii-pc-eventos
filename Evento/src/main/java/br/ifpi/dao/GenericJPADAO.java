@@ -17,9 +17,9 @@ public class GenericJPADAO implements GenericDAO {
 	public Object save(Object entity) {
 		EntityManager em = JPAUtil.getCurrentEntityManager();
 		try {
-			//em.getTransaction().begin(); //Se Usar AppWeb a Transacao será controlada pelo OpenSessionInView
+			em.getTransaction().begin(); //Se Usar AppWeb a Transacao será controlada pelo OpenSessionInView
 			Object obj = em.merge(entity);
-			//em.getTransaction().commit();
+			em.getTransaction().commit();
 			return obj;
 		} catch (Exception e) {
 			//em.getTransaction().rollback();
