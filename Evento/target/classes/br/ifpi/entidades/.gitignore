@@ -11,3 +11,16 @@
 /FaseEvento.class
 /FaseLancamento.class
 /Instituicao.class
+/Papel.class
+/FaseAndamento.class
+/FaseFinalizado.class
+/FaseInscricao.class
+/Pagamento.class
+/StatusInscricao.class
+/Participante.class
+/PerfilParticipante.class
+/TipoUsuario.class
+/SegmentoParticipante.class
+/AtividadeComposta.class
+/AtividadeSimples.class
+/TipoAtividade.class
