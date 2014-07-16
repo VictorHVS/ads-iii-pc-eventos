@@ -1,5 +1,12 @@
 package br.ifpi.entidades;
 
-public abstract class TipoUsuario {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+@Entity
+public abstract class TipoUsuario {
+	
+	@Id @GeneratedValue
+	private Long id;
 }

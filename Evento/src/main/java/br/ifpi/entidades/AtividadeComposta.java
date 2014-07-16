@@ -3,9 +3,19 @@ package br.ifpi.entidades;
 import java.util.Calendar;
 import java.util.List;
 
-public class AtividadeComposta extends Atividade{
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class AtividadeComposta extends Atividade {
+	
+	@Id
+	@GeneratedValue
+	private Long id;
 
 	private List<AtividadeSimples> unidades;
+
 	@Override
 	public Long getId() {
 		// TODO Auto-generated method stub

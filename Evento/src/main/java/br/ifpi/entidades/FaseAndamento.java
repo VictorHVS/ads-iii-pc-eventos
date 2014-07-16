@@ -1,5 +1,14 @@
 package br.ifpi.entidades;
 
-public class FaseAndamento {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class FaseAndamento extends FaseEvento {
+	
+	@Id @GeneratedValue
+	private Long id;
+	
 
 }

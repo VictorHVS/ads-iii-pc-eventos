@@ -17,8 +17,6 @@ public class Organizacao {
 	private String nome;
 	@OneToMany
 	private List<Instituicao> instituicoes;
-	@Enumerated(EnumType.STRING)
-	private List<Papel> papeis;
 	
 	public Organizacao(String nome) {
 		super();
@@ -48,15 +46,5 @@ public class Organizacao {
 	public void setInstituicoes(List<Instituicao> instituicoes) {
 		this.instituicoes = instituicoes;
 	}
-
-	public List<Papel> getPapeis() {
-		return papeis;
-	}
-
-	public void setPapeis(List<Papel> papeis) {
-		this.papeis = papeis;
-	}
-	
-	
 	
 }
