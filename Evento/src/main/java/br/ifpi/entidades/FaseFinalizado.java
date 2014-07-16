@@ -1,7 +1,7 @@
 package br.ifpi.entidades;
 
 public class FaseFinalizado extends FaseEvento{
-	FaseFinalizado  fase;
+	 FaseFinalizado  fase;
 
 	@Override
 	public FaseEvento atualizar() {
